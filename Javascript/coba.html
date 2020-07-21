@@ -3,18 +3,24 @@
 <head>
 <title>Try Out - Agung Wicaksono</title>
  
-    <body>
-        <script language="Javascript">
-            var nilai = new Array(2,15,22,36,49,54,60,78,87,91);
-            var hasilMax = Math.max.apply(null,nilai);
-            var hasilMin = Math.min.apply(null,nilai);
-            var ratarata = Math.max.apply(null,nilai)/10;
-        
-            document.write("Nilai : "+ nilai+ "<br>");
-            document.write("Maksimal: "+ hasilMax+ "<hr>");
-            document.write("Minimal: "+ hasilMin+ "<hr>");    
-            document.write("Rata-rata: "+ ratarata+ "<hr>");
-        
-        </script>
-    </body>
+<body>
+    <script>
+        var jsonStr  = '[
+                            { "id": 1, "name": "Udin", "age": 12 },
+                            { "id": 2, "name": "Reane", "age": 51 },
+                            { "id": 3, "name": "Budi", "age": 34 },
+                            { "id": 4, "name": "Agus", "age": 16 },
+                            { "id": 5, "name": "Sari", "age": 19 },
+                            { "id": 6, "name": "Ririn", "age": 20 },
+                            { "id": 7, "name": "Dessy", "age": 23 }
+                        ]';
+    
+        var data = JSON.parse(j, function(key, value) { 
+          if ( value.age < 21 ) jsonStr.Push(value); 
+          return value; })
+    
+        console.log( jsonStr )
+     </script>
+</body>
+
 </html>
